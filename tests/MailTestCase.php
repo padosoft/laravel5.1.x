@@ -9,13 +9,17 @@
 
 use GuzzleHttp\Psr7\Response;
 
-class MailTestCase extends TestCase
+class MailTestCase extends \TestCase
 {
     protected $mailcatcher;
 
-    function __construct()
+    /**
+     *
+     */
+    public function setUp()
     {
         $this->mailcatcher = new \GuzzleHttp\Client(['base_uri' => 'http://192.168.0.29:1080']);
+        parent::setUp();
     }
 
     public function getAllEmails()
@@ -35,7 +39,7 @@ class MailTestCase extends TestCase
 
     public function getLastEmailHtml()
     {
-        $emailId = $this->getAllEmails()[0]['id'];
+        $emailId = $this->getAllEmails()[max(array_keys($this->getAllEmails()))]['id'];
         return $this->mailcatcher->get("/messages/{$emailId}.html");
     }
 
@@ -52,7 +56,7 @@ class MailTestCase extends TestCase
     public function getLastEmailJson()
     {
         //return $this->getAllEmails()[0];
-        $emailId = $this->getAllEmails()[0]['id'];
+        $emailId = $this->getAllEmails()[max(array_keys($this->getAllEmails()))]['id'];
         return $this->mailcatcher->get("/messages/{$emailId}.json");
 
     }
@@ -77,4 +81,5 @@ class MailTestCase extends TestCase
     {
         $this->assertNotContains ("<{$recipient}>", $email['recipients']);
     }
+
 }

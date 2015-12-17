@@ -7,7 +7,9 @@
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.1.*",
-        "guzzlehttp/guzzle": "^6.1"
+        "guzzlehttp/guzzle": "^6.1",
+        "monolog/monolog": "1.11",
+        "doctrine/doctrine-bundle": "1.5.1"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -16,14 +18,13 @@
         "phpspec/phpspec": "~2.1",
 		"barryvdh/laravel-ide-helper": "^2.1",
         "barryvdh/laravel-debugbar": "^2.0",
-        "filp/whoops": "^1.1",
-        "monolog/monolog": "1.11",
-        "doctrine/doctrine-bundle": "1.5.1"
+        "filp/whoops": "^1.1"
     },
     "autoload": {
         "classmap": [
             "database",
             "tests/TestCase.php",
+            "tests/TestBase.php",
             "tests/MailTestCase.php"
         ],
         "psr-4": {
@@ -33,10 +34,11 @@
     },
     "autoload-dev": {
         "classmap": [
-            "tests/TestCase.php"
+            "tests/TestCase.php",
+            "tests/TestBase.php"
         ],
         "psr-4": {
-            "Padosoft\\Composer\\Tests\\": "packages/padosoft/composer/tests/"
+            "Padosoft\\Composer\\Test\\": "packages/padosoft/composer/tests/"
         }
     },
     "scripts": {
