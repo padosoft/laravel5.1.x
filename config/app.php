@@ -108,7 +108,8 @@ return [
     |
     */
 
-    'providers' => [
+    'providers' => [ 
+        
         /*
          * Laravel Framework Service Providers...
          */
@@ -144,10 +145,16 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /*
+         * * PADOSOFT IDE Service Providers...
+         */
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
 
-
+        /*
+         * PADOSOFT PACKAGES Service Providers...
+         */
+        Padosoft\LaravelComposerSecurity\ComposerSecurityCheckServiceProvider::class,
 
     ],
 
