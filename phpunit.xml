@@ -10,17 +10,15 @@
          stopOnFailure="false"
          syntaxCheck="false">
     <testsuites>
-        <testsuite name="App">
+        <testsuite name="Application Test Suite">
             <directory>./tests/</directory>
         </testsuite>
-        <testsuite name="Package">
-            <directory suffix=".php">./packages/padosoft/composer/tests/</directory>
-            <exclude><file>./packages/padosoft/composer/tests/MailHelperTest.php</file></exclude>
-        </testsuite>
-        <testsuite name="Mail">
-            <file>./packages/padosoft/composer/tests/MailHelperTest.php</file>
-        </testsuite>
     </testsuites>
+    <filter>
+        <whitelist>
+            <directory suffix=".php">app/</directory>
+        </whitelist>
+    </filter>
     <php>
         <env name="APP_ENV" value="testing"/>
         <env name="CACHE_DRIVER" value="array"/>
