@@ -3,7 +3,13 @@
 namespace App\Exceptions;
 
 use Exception;
+use Illuminate\Auth\Access\AuthorizationException;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Symfony\Component\HttpKernel\Exception\HttpException;
+use Illuminate\Foundation\Validation\ValidationException;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use GrahamCampbell\Exceptions\ExceptionHandlerc as GrahamCampbellExceptionHandler;
 
 class Handler extends ExceptionHandler
 {
@@ -13,7 +19,10 @@ class Handler extends ExceptionHandler
      * @var array
      */
     protected $dontReport = [
-        \Symfony\Component\HttpKernel\Exception\HttpException::class,
+        AuthorizationException::class,
+        HttpException::class,
+        ModelNotFoundException::class,
+        ValidationException::class,
     ];
 
     /**
@@ -26,17 +35,15 @@ class Handler extends ExceptionHandler
      */
     public function report(Exception $e)
     {
-
-        //var_dump($e);
         if ($e instanceof \PHPUnit_Framework_Exception) {
 
             echo $e->getMessage();
             echo $e->getTraceAsString();
         }
 
-        $whoops = new \Whoops\Run;
-        $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
-        $whoops->register();
+        //$whoops = new \Whoops\Run;
+        //$whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
+        //$whoops->register();
 
         return parent::report($e);
     }
@@ -50,6 +57,30 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $e)
     {
-        return parent::render($request, $e);
+        if ($this->isHttpException($e))
+        {
+            return $this->renderHttpException($e);
+        }
+
+
+        if (config('app.debug'))
+        {
+            return $this->renderExceptionWithWhoops($e);
+        }
+    }
+
+    /**
+     *
+     */
+    protected function renderExceptionWithWhoops(Exception $e)
+    {
+        $whoops = new \Whoops\Run;
+        $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler());
+
+        return new \Illuminate\Http\Response(
+            $whoops->handleException($e),
+            $e->getStatusCode(),
+            $e->getHeaders()
+        );
     }
 }

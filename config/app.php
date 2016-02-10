@@ -95,7 +95,7 @@ return [
     |
     */
 
-    'log' => 'single',
+    'log' => 'daily',
 
     /*
     |--------------------------------------------------------------------------
@@ -150,12 +150,14 @@ return [
          */
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
+        //GrahamCampbell\Exceptions\ExceptionsServiceProvider::class,
+        Arcanedev\LogViewer\LogViewerServiceProvider::class,
+        Spatie\Tail\TailServiceProvider::class,
 
         /*
          * PADOSOFT PACKAGES Service Providers...
          */
         Padosoft\LaravelComposerSecurity\ComposerSecurityCheckServiceProvider::class,
-
     ],
 
     /*
