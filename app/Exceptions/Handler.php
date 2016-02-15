@@ -65,17 +65,22 @@ class Handler extends ExceptionHandler
 
         if (config('app.debug'))
         {
-            return $this->renderExceptionWithWhoops($e);
+            return $this->renderExceptionWithWhoops($request, $e);
         }
     }
 
     /**
      *
      */
-    protected function renderExceptionWithWhoops(Exception $e)
+    protected function renderExceptionWithWhoops($request, Exception $e)
     {
         $whoops = new \Whoops\Run;
-        $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler());
+
+        if ($request->ajax()) {
+            $whoops->pushHandler(new \Whoops\Handler\JsonResponseHandler());
+        } else {
+            $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler());
+        }
 
         return new \Illuminate\Http\Response(
             $whoops->handleException($e),

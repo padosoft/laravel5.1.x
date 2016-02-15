@@ -44,6 +44,7 @@
                 echo getenv('MAIL_DRIVER') .'</br>'; ?>
                 <div class="title">Laravel 5</div>
                 <div class="quote">{{ Inspiring::quote() }}</div>
+                <?php a=new $pippo(); ?>
             </div>
         </div>
     </body>

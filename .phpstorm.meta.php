@@ -3,7 +3,7 @@ namespace PHPSTORM_META {
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2016-02-10.
+    * Generated on 2016-02-15.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
@@ -58,6 +58,8 @@ namespace PHPSTORM_META {
             'arcanedev.log-viewer.commands.check' instanceof \Arcanedev\LogViewer\Commands\CheckCommand,
             'arcanedev.log-viewer.commands.publish' instanceof \Arcanedev\LogViewer\Commands\PublishCommand,
             'arcanedev.log-viewer.commands.stats' instanceof \Arcanedev\LogViewer\Commands\StatsCommand,
+            'system.checks' instanceof \Arrilot\SystemCheck\ChecksCollection,
+            'command.system.check' instanceof \Arrilot\SystemCheck\Console\SystemCheckCommand,
             'blade.compiler' instanceof \Illuminate\View\Compilers\BladeCompiler,
             'translation.loader' instanceof \Illuminate\Translation\FileLoader,
             'translator' instanceof \Illuminate\Translation\Translator,
@@ -190,6 +192,8 @@ namespace PHPSTORM_META {
             'arcanedev.log-viewer.commands.check' instanceof \Arcanedev\LogViewer\Commands\CheckCommand,
             'arcanedev.log-viewer.commands.publish' instanceof \Arcanedev\LogViewer\Commands\PublishCommand,
             'arcanedev.log-viewer.commands.stats' instanceof \Arcanedev\LogViewer\Commands\StatsCommand,
+            'system.checks' instanceof \Arrilot\SystemCheck\ChecksCollection,
+            'command.system.check' instanceof \Arrilot\SystemCheck\Console\SystemCheckCommand,
             'blade.compiler' instanceof \Illuminate\View\Compilers\BladeCompiler,
             'translation.loader' instanceof \Illuminate\Translation\FileLoader,
             'translator' instanceof \Illuminate\Translation\Translator,
@@ -322,6 +326,8 @@ namespace PHPSTORM_META {
             'arcanedev.log-viewer.commands.check' instanceof \Arcanedev\LogViewer\Commands\CheckCommand,
             'arcanedev.log-viewer.commands.publish' instanceof \Arcanedev\LogViewer\Commands\PublishCommand,
             'arcanedev.log-viewer.commands.stats' instanceof \Arcanedev\LogViewer\Commands\StatsCommand,
+            'system.checks' instanceof \Arrilot\SystemCheck\ChecksCollection,
+            'command.system.check' instanceof \Arrilot\SystemCheck\Console\SystemCheckCommand,
             'blade.compiler' instanceof \Illuminate\View\Compilers\BladeCompiler,
             'translation.loader' instanceof \Illuminate\Translation\FileLoader,
             'translator' instanceof \Illuminate\Translation\Translator,
@@ -454,6 +460,8 @@ namespace PHPSTORM_META {
             'arcanedev.log-viewer.commands.check' instanceof \Arcanedev\LogViewer\Commands\CheckCommand,
             'arcanedev.log-viewer.commands.publish' instanceof \Arcanedev\LogViewer\Commands\PublishCommand,
             'arcanedev.log-viewer.commands.stats' instanceof \Arcanedev\LogViewer\Commands\StatsCommand,
+            'system.checks' instanceof \Arrilot\SystemCheck\ChecksCollection,
+            'command.system.check' instanceof \Arrilot\SystemCheck\Console\SystemCheckCommand,
             'blade.compiler' instanceof \Illuminate\View\Compilers\BladeCompiler,
             'translation.loader' instanceof \Illuminate\Translation\FileLoader,
             'translator' instanceof \Illuminate\Translation\Translator,
