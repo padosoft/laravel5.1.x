@@ -159,6 +159,7 @@ return [
          */
         Padosoft\LaravelComposerSecurity\ComposerSecurityCheckServiceProvider::class,
         Arrilot\SystemCheck\ServiceProvider::class,
+        MathiasGrimm\LaravelEnvValidator\ServiceProvider::class,
 
     ],
 

@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6df12ed65eb96ca3411b2d6872889b85",
-    "content-hash": "3d9d9e7380d59e1415653a6a007607ce",
+    "hash": "230d538db0cc86fd77ff5551f65ee075",
+    "content-hash": "37da69910cdbddcab8ee7878016e8aac",
     "packages": [
         {
             "name": "arcanedev/log-viewer",
@@ -139,7 +139,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/arrilot/laravel-systemcheck/zipball/95a7479a5a87600957fc8179c7da6e8a5c232925",
+                "url": "https://api.github.com/repos/arrilot/laravel-systemcheck/zipball/e1ad5ccb8ec20d8c2b4db77a3e7de5a1dc4a5a22",
                 "reference": "95a7479a5a87600957fc8179c7da6e8a5c232925",
                 "shasum": ""
             },
@@ -1577,6 +1577,36 @@
             "time": "2015-12-19 20:16:43"
         },
         {
+            "name": "mathiasgrimm/laravel-env-validator",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mathiasgrimm/laravel-env-validator.git",
+                "reference": "5c566039cd299fc894871420223da830f3702752"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mathiasgrimm/laravel-env-validator/zipball/5c566039cd299fc894871420223da830f3702752",
+                "reference": "5c566039cd299fc894871420223da830f3702752",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "MathiasGrimm\\LaravelEnvValidator\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Mathias Grimm",
+                    "email": "mathiasgrimm@gmail.com"
+                }
+            ],
+            "description": "Laravel Validator for the .env file",
+            "time": "2016-03-08 11:40:22"
+        },
+        {
             "name": "monolog/monolog",
             "version": "1.11.0",
             "source": {
@@ -2162,7 +2192,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/config/zipball/41ee6c70758f40fa1dbf90d019ae0a66c4a09e74",
+                "url": "https://api.github.com/repos/symfony/config/zipball/ee4cdda66aff834c8125e8f2c15932461667c521",
                 "reference": "41ee6c70758f40fa1dbf90d019ae0a66c4a09e74",
                 "shasum": ""
             },

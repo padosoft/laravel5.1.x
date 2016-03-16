@@ -12,7 +12,8 @@
         "doctrine/doctrine-bundle": "1.5.1",
         "arcanedev/log-viewer": "~3.0",
         "spatie/laravel-tail": "^1.1",
-        "arrilot/laravel-systemcheck": "dev-master"
+        "arrilot/laravel-systemcheck": "dev-master",
+        "mathiasgrimm/laravel-env-validator": "^1.1"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
